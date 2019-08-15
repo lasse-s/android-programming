@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Liikennemerkit</string>
+    <string name="action_settings">Asetukset</string>
+    <string name="guess_sign">Arvaa merkki</string>
+    <string name="image_description">Nykyisen liikennemerkin kuva</string>
+    <string name="incorrect_answer">Väärin!</string>
+    <string name="number_of_choices">Vaihtoehtojen määrä</string>
+    <string name="number_of_choices_description">Näytä 2, 4, 6 tai 8 arvauspainiketta</string>
+    <string name="question_number">Kysymys %1$d of %2$d</string>
+    <string name="reset_quiz">Käynnistä kysely uudestaan</string>
+    <string name="restarting_quiz">Kysely käynnistyy uudelleen uusilla asetuksilla</string>
+    <string name="results">%1$d arvausta, %2$.02f%% correct</string>
+    <string name="title_activity_settings">Asetukset</string>
+</resources>

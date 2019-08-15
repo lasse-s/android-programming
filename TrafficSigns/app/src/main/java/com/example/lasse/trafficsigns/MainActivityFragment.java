@@ -40,15 +40,15 @@ public class MainActivityFragment extends Fragment {
 
     private static final int SIGNS_IN_QUIZ = 10;
 
-    private List<String> fileNameList; // lipputiedostojen nimet
+    private List<String> fileNameList; // liikennemerkkitiedostojen nimet
     private List<String> quizSignsList; // visailun maat
     private String correctAnswer; // oikea vastaus lipulle
     private int totalGuesses; // arvausten määrä
     static int staticTotalGuesses; // LISÄTTY apumuuttuja lisätyn sisäluokan vaatimuksesta......
     private int correctAnswers; // oikeiden vastausten määrä
-    private int guessRows; // näytettävien lippurivien määrä
+    private int guessRows; // näytettävien liikennemerkkirivien määrä
     private SecureRandom random; // visailun satunnaistaminen
-    private Handler handler; // viive lippujen lataamisessa
+    private Handler handler; // viive liikennemerkkien lataamisessa
     private Animation shakeAnimation; // oikean lipun animointi
 
     private LinearLayout quizLinearLayout; // asettelu visalle
@@ -116,7 +116,7 @@ public class MainActivityFragment extends Fragment {
                 sharedPreferences.getString(MainActivity.CHOICES, "4");
         guessRows = Integer.valueOf(choices) / 2;
 
-        // piilotetaan kaikki lippujen näkymät
+        // piilotetaan kaikki liikennemerkkien näkymät
         for (LinearLayout layout : guessLinearLayouts)
             layout.setVisibility(View.GONE);
 
@@ -152,29 +152,29 @@ public class MainActivityFragment extends Fragment {
         int signCounter = 1;
         int numberOfSigns = fileNameList.size();
 
-        // lisätään SIGNS_IN_QUIZ määrä satunnaisia lipputiedostoja lippuihin
+        // lisätään SIGNS_IN_QUIZ määrä satunnaisia liikennemerkkitiedostoja liikennemerkkeihin
         while (signCounter <= SIGNS_IN_QUIZ) {
             int randomIndex = random.nextInt(numberOfSigns);
 
             // haetaan satunnaisen tiedoston nimi
             String filename = fileNameList.get(randomIndex);
 
-            // jos alue sallittu ja lippua ei ole jo valittu
+            // jos alue sallittu ja liikennemerkkia ei ole jo valittu
             if (!quizSignsList.contains(filename)) {
                 quizSignsList.add(filename); // lisätään tiedosto
                 ++signCounter;
             }
         }
 
-        loadNextSign(); // käynnistetään lataamalla ensimmäinen lippu, seuraavassa määritellään tämä
+        loadNextSign(); // käynnistetään lataamalla ensimmäinen liikennemerkki, seuraavassa määritellään tämä
     }
 
 
     /**
-     * kun oikea lippu arvattu, ladataan seuraava lippu.
+     * kun oikea liikennemerkki arvattu, ladataan seuraava liikennemerkki.
      */
     private void loadNextSign() {
-        // luetaan tiedoston nimi ja lippu, ja poistetaan listalta
+        // luetaan tiedoston nimi ja liikennemerkki, ja poistetaan listalta
         String nextImage = quizSignsList.remove(0);
         correctAnswer = nextImage; // päivitetään oikea vastaus
         answerTextView.setText(""); // tyhjennetään vastaus
@@ -319,12 +319,12 @@ public class MainActivityFragment extends Fragment {
                     resetQuiz();
 
                 } else { // vastaus on oikein, mutta visailu jatkuu
-                    // ladataan seuraava lippu 2 s viiveen jälkeen
+                    // ladataan seuraava liikennemerkki 2 s viiveen jälkeen
                     handler.postDelayed(
                             new Runnable() {
                                 @Override
                                 public void run() {
-                                    animate(true); // animoidaan lippu pois
+                                    animate(true); // animoidaan liikennemerkki pois
                                 }
                             }, 2000); // 200 ms viive
                 }
