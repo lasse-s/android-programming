@@ -9,9 +9,10 @@ import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.view.View;
 import android.widget.SeekBar;
+import android.widget.SeekBar.OnSeekBarChangeListener;
 
-public class FillColorDialogFragment extends DialogFragment {
-
+// class for the Select Color dialog
+public class ColorDialogFragment extends DialogFragment {
     private SeekBar alphaSeekBar;
     private SeekBar redSeekBar;
     private SeekBar greenSeekBar;
@@ -30,7 +31,7 @@ public class FillColorDialogFragment extends DialogFragment {
         builder.setView(colorDialogView); // add GUI to dialog
 
         // set the AlertDialog's message
-        builder.setTitle(R.string.title_fill_color_dialog);
+        builder.setTitle(R.string.title_color_dialog);
 
         // get the color SeekBars and set their onChange listeners
         alphaSeekBar = (SeekBar) colorDialogView.findViewById(
@@ -51,7 +52,7 @@ public class FillColorDialogFragment extends DialogFragment {
 
         // use current drawing color to set SeekBar values
         final DoodleView doodleView = getDoodleFragment().getDoodleView();
-        color = doodleView.getFillColor();
+        color = doodleView.getDrawingColor();
         alphaSeekBar.setProgress(Color.alpha(color));
         redSeekBar.setProgress(Color.red(color));
         greenSeekBar.setProgress(Color.green(color));
@@ -61,7 +62,7 @@ public class FillColorDialogFragment extends DialogFragment {
         builder.setPositiveButton(R.string.button_set_color,
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        doodleView.setFillColor(color);
+                        doodleView.setDrawingColor(color);
                     }
                 }
         );
@@ -96,8 +97,8 @@ public class FillColorDialogFragment extends DialogFragment {
     }
 
     // OnSeekBarChangeListener for the SeekBars in the color dialog
-    private final SeekBar.OnSeekBarChangeListener colorChangedListener =
-            new SeekBar.OnSeekBarChangeListener() {
+    private final OnSeekBarChangeListener colorChangedListener =
+            new OnSeekBarChangeListener() {
                 // display the updated color
                 @Override
                 public void onProgressChanged(SeekBar seekBar, int progress,
@@ -116,5 +117,4 @@ public class FillColorDialogFragment extends DialogFragment {
                 @Override
                 public void onStopTrackingTouch(SeekBar seekBar) {} // required
             };
-
 }
