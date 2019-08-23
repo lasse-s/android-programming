@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SykeMittari</string>
+    <string name="connect">TALLENNA</string>
+    <string name="connect_text">Yhdistä H10-sensori</string>
+    <string name="connected">Yhdistetty laitteeseen</string>
+    <string name="connected_text">YHDISTETTY</string>
+    <string name="connecting">Yhdistetään laitteeseen</string>
+    <string name="continue_text">Jatka</string>
+    <string name="device_id_hint">Anna H10-sensorin laite ID</string>
+    <string name="disconnect">LOPETA</string>
+    <string name="disconnected_text">YHTEYS KATKAISTU</string>
+    <string name="saved_measurements">Tallennetut mittaukset</string>
+    <string name="searching">Etsitään laitteita</string>
+    <string name="start_recording">Aloita</string>
+    <string name="stop_recording">Lopeta</string>
+    <string name="storage">Tallennetut mittaukset</string>
+    <string name="recording">Nauhoittaa</string>
+    <string name="live_monitor">Syke reaaliajassa</string>
+</resources>

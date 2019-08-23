@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        <com.jjoe64.graphview.GraphView
+            android:id="@+id/graph"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_weight="7">
+
+        <Button
+            android:id="@+id/buttonStartRec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:background="@color/startButton"
+            android:hint="@string/start_recording"
+            android:onClick="onClickContinue"
+            android:padding="8dp"
+            android:textColor="@color/colorAccent" />
+
+        <Button
+            android:id="@+id/buttonStopRec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@color/stopButton"
+            android:foregroundGravity="fill_horizontal"
+            android:hint="@string/stop_recording"
+            android:onClick="onClickContinue"
+            android:padding="8dp"
+            android:textColor="@color/colorAccent" />
+
+        <TextView
+            android:id="@+id/recordingText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:drawableLeft="@drawable/ic_rec_24dp"
+            android:text="@string/recording"
+            android:textSize="@dimen/text_normal" />
+
+    </RelativeLayout>
+
+</LinearLayout>
