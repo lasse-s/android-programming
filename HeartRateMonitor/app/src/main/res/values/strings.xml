@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">HeartRateMonitor</string>
+    <string name="disconnect">STOP</string>
+    <string name="connect">RECORD</string>
+    <string name="searching">Searching for devices</string>
+    <string name="connecting">Connecting to device</string>
+    <string name="connected">Connected to device</string>
+    <string name="continue_text">Continue</string>
+    <string name="device_id_hint">Enter H10 device ID</string>
+    <string name="connect_text">Connect to H10</string>
+    <string name="disconnected_text">DISCONNECTED</string>
+    <string name="connected_text">CONNECTED</string>
+    <string name="start_recording">Start</string>
+    <string name="stop_recording">Stop</string>
+    <string name="recording">Recording</string>
+    <string name="storage">View saved measurements</string>
+    <string name="live_monitor">Monitor live</string>
+    <string name="saved_measurements">Saved measurements</string>
+</resources>
